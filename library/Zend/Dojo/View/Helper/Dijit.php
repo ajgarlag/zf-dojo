@@ -341,4 +341,48 @@ EOJ;
 
         $this->dojo->addJavascript($function);
     }
+
+    /**
+     * Render data store element
+     *
+     * Renders to dojo view helper
+     *
+     * @param  array $params
+     * @return string|false
+     */
+    protected function _renderStore(array $params, $id)
+    {
+        if (!array_key_exists('store', $params) || !array_key_exists('type', $params)) {
+            return false;
+        }
+
+        $this->dojo->requireModule($params['type']);
+
+        $extraParams = array();
+        $storeParams = array(
+            'dojoType' => $params['type'],
+            'jsId'     => $params['store'],
+        );
+
+        if (array_key_exists('params', $params)) {
+            $storeParams = array_merge($storeParams, $params['params']);
+            $extraParams = $params['params'];
+        }
+
+        if ($this->_useProgrammatic()) {
+            if (!$this->_useProgrammaticNoScript()) {
+                require_once 'Zend/Json.php';
+                $this->dojo->addJavascript('var ' . $storeParams['jsId'] . ";\n");
+                $js = $storeParams['jsId'] . ' = '
+                    . 'new ' . $storeParams['dojoType'] . '('
+                    .     Zend_Json::encode($extraParams)
+                    . ");\n";
+                $js = "function() {\n$js\n}";
+                $this->dojo->_addZendLoad($js);
+            }
+            return true;
+        }
+
+        return '<div' . $this->_htmlAttribs($storeParams) . '></div>';
+    }
 }

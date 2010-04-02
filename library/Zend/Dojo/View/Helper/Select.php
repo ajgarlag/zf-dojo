@@ -20,19 +20,19 @@
  * @version    $Id$
  */
 
-/** Zend_Dojo_View_Helper_ComboBox */
-require_once 'Zend/Dojo/View/Helper/ComboBox.php';
+/** Zend_Dojo_View_Helper_Dijit */
+require_once 'Zend/Dojo/View/Helper/Dijit.php';
 
 /**
  * Dojo Select dijit
  *
- * @uses       Zend_Dojo_View_Helper_ComboBox
+ * @uses       Zend_Dojo_View_Helper_Dijit
  * @package    Zend_Dojo
  * @subpackage View
  * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
   */
-class Zend_Dojo_View_Helper_Select extends Zend_Dojo_View_Helper_ComboBox
+class Zend_Dojo_View_Helper_Select extends Zend_Dojo_View_Helper_Dijit
 {
     /**
      * Dijit being used
@@ -58,6 +58,42 @@ class Zend_Dojo_View_Helper_Select extends Zend_Dojo_View_Helper_ComboBox
      */
     public function select($id, $value = null, array $params = array(), array $attribs = array(), array $options = null)
     {
-        return $this->comboBox($id, $value, $params, $attribs, $options);
+        $html = '';
+        if (!array_key_exists('id', $attribs)) {
+            $attribs['id'] = $id;
+        }
+        if (array_key_exists('store', $params) && is_array($params['store'])) {
+            // using dojo.data datastore
+            if (false !== ($store = $this->_renderStore($params['store'], $id))) {
+                $params['store'] = $params['store']['store'];
+                if (is_string($store)) {
+                    $html .= $store;
+                }
+            } else {
+                unset($params['store']);
+            }
+        } elseif (array_key_exists('store', $params)) {
+            if (array_key_exists('storeType', $params)) {
+                $storeParams = array(
+                    'store' => $params['store'],
+                    'type'  => $params['storeType'],
+                );
+                unset($params['storeType']);
+                if (array_key_exists('storeParams', $params)) {
+                    $storeParams['params'] = $params['storeParams'];
+                    unset($params['storeParams']);
+                }
+                if (false !== ($store = $this->_renderStore($storeParams, $id))) {
+                    if (is_string($store)) {
+                        $html .= $store;
+                    }
+                }
+            }
+        }
+
+        // do as normal select
+        $attribs = $this->_prepareDijit($attribs, $params, 'element');
+        $html .= $this->view->formSelect($id, $value, $attribs, $options);
+        return $html;
     }
 }
