@@ -44,5 +44,5 @@ class Zend_Dojo_Form_Element_Select extends Zend_Dojo_Form_Element_ComboBox
      * Flag: autoregister inArray validator?
      * @var bool
      */
-    protected $_registerInArrayValidator = false;
+    protected $_registerInArrayValidator = true;
 }
