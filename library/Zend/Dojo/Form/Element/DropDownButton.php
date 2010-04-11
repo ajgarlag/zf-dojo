@@ -32,7 +32,7 @@ require_once 'Zend/Dojo/Form/Element/Button.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @version    $Id$
  */
-class Crystal_Dojo_Form_Element_DropDownButton extends Zend_Dojo_Form_Element_Button
+class Zend_Dojo_Form_Element_DropDownButton extends Zend_Dojo_Form_Element_Button
 {
     /**
      * Use DropDownButton dijit view helper
