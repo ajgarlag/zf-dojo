@@ -28,6 +28,8 @@ if (!defined('PHPUnit_MAIN_METHOD')) {
 
 require_once 'Zend/Dojo/View/Helper/TooltipTest.php';
 
+require_once 'Zend/Dojo/View/Helper/TitlePaneTest.php';
+
 /**
  * @category   Zend
  * @package    Zend_Dojo
@@ -49,6 +51,7 @@ class Zend_Dojo_View_Helper_AllTests
         $suite = new PHPUnit_Framework_TestSuite('Zend Framework - Zend_Dojo_View_Helper');
 
         $suite->addTestSuite('Zend_Dojo_View_Helper_TooltipTest');
+        $suite->addTestSuite('Zend_Dojo_View_Helper_TitlePaneTest');
 
         return $suite;
     }
