@@ -1,0 +1,40 @@
+/*
+ * Reset css
+ *
+ * @author:    IF MEDIA
+ * @email:     admin@ifmedia.eu
+ * @website:   http://www.finnisport.sk/
+ * @version:   $Id: reset.css 3 2010-04-08 17:34:46Z merizamed $
+ */
+
+html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, blockquote, th, td, a, img {
+    margin: 0px;
+    padding: 0px;
+}
+
+img, body, html {
+    border: 0px;
+}
+
+/*
+address, caption, cite, code, dfn, em, strong, th, var {
+    font-style: normal;
+    font-weight: normal;
+}
+*/
+
+ol, ul {
+    list-style: none;
+}
+
+caption, th {
+    text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+}
+
+q:before, q:after {
+    content: '';
+}

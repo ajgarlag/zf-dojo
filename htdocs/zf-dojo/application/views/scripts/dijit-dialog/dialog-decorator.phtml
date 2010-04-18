@@ -1,0 +1,35 @@
+<h1>Zend Framework "Form Decorator" for dijit.Dialog</h1>
+<h2><u>dijit.Dialog</u> as Form's Decorator:</h2>
+<?php
+    $this->dojo()->enable()
+                 ->requireModule('dojox.validate.regexp');
+?>
+<?php echo $this->form ?>
+<br />
+<p>
+    When pressing this button the Dojo Form with <u>dijit.Dialog</u> Decorator will popup.
+</p>
+<?php echo $this->button(
+    'show-dialog-1',
+    'Show Form with dijit.Dialog Decorator',
+    array(
+        'onClick' => 'showDialog1();'
+    ),
+    array(
+        'title' => 'After click Dialog 1 will be showed',
+        'style' => 'margin-top: 10px;'
+    )
+) ?>
+<?php $this->inlineScript()->captureStart() ?>
+function showDialog1() {
+    dialogExample.show();
+}
+<?php $this->inlineScript()->captureEnd() ?>
+<h5 class="highlightCodeHeading">Code in View:</h5>
+<div class="highlightCode">
+    <?php echo $this->code ?>
+</div>
+<h5 class="highlightCodeHeading">Code for the Dojo Form:</h5>
+<div class="highlightCode">
+    <?php echo $this->formCode ?>
+</div>

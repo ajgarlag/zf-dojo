@@ -1,0 +1,15 @@
+<h1>Zend Framework "View Helper" for dijit.ColorPalette - Simple Usage</h1>
+<?php echo $this->colorPalette(
+    'colorPalette-1',
+    '',
+    array(
+        'palette'  => '7x10',
+        'onChange' => 'alert(dojo.attr(this, "value"));'
+    ),
+    array(
+    )
+) ?>
+<h5 class="highlightCodeHeading">Code in View:</h5>
+<div class="highlightCode">
+    <?php echo $this->code ?>
+</div>

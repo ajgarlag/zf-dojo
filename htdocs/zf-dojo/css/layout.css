@@ -1,0 +1,73 @@
+/*
+ * Layout
+ *
+ * @author:    IF MEDIA
+ * @email:     admin@ifmedia.eu
+ * @website:   http://www.finnisport.sk/
+ * @version:   $Id: layout.css 3 2010-04-08 17:34:46Z merizamed $
+ */
+
+
+/* Layout
+ -----------------------------------------------------------------------------*/
+body {
+    color: #272727;
+    font-size: 11px;
+    font-family: "Trebuchet MS", verdana, sans-serif;
+    background-color: #fff;
+}
+
+/* Main wrapper
+ -----------------------------------------------------------------------------*/
+#wrapper {
+    padding: 0 0 16px 30px;
+}
+
+/* Site's header
+ -----------------------------------------------------------------------------*/
+#header {
+}
+
+/* Primary content
+ -----------------------------------------------------------------------------*/
+#primaryContent {
+}
+
+/* Site's footer
+ -----------------------------------------------------------------------------*/
+#footer {
+}
+
+/* Classes for clearing floats
+ -----------------------------------------------------------------------------*/
+.clear:after {
+    content: " ";
+    display: block;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+/* Only IE5 for Mac \*//*/
+.clear {
+    display: inline-block;
+}
+/* End of hack */
+
+/* Hide before IE5 for MAC \*/
+/* Only for IE7 */
+* + html .clear {
+    height: 1%;
+}
+/* End of hack */
+
+.clearfix {
+    clear: both;
+}
+
+.clearfix-empty {
+    clear: both;
+    height: 0;
+}

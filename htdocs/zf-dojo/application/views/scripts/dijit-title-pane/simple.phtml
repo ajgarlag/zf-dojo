@@ -1,0 +1,51 @@
+<h1>Zend Framework "View Helper" for dijit.TitlePane - Simple Usage</h1>
+<?php echo $this->titlePane(
+    'simpleTitlePane-1',
+    $this->content,
+    array(
+        'title' => 'Simple TitlePane - Content was passed to the view from Controller'
+    ),
+    array(
+        'style' => 'margin-bottom: 20px;'
+    )
+) ?>
+<?php echo $this->titlePane(
+    'simpleTitlePane-2',
+    '',
+    array(
+        'title' => 'Simple TitlePane - Content will be obtained from DOM node (text which is below button)'
+    ),
+    array(
+        'style' => 'margin-bottom: 20px;'
+    )
+) ?>
+<?php echo $this->button(
+    'loadContentFor-simpleTitlePane-2',
+    'Load Content to TitlePane',
+    array(
+    ),
+    array(
+        'title' => 'Load Content from div#fromDomNode into the TitlePane with id#simpleTitlePane-2',
+        'style' => 'margin-bottom: 20px;'
+    )
+) ?>
+<div id="fromDomNode">
+<p>Lorem ipsum dolor sit amet consectetuer ligula euismod sed sollicitudin vitae. Ipsum congue mauris quis Lorem Donec
+Vestibulum ut ut Vestibulum tempus. Facilisis at congue.</p>
+<p>Metus feugiat cursus Sed pulvinar magna urna Nunc tempor tempor Curabitur. Phasellus ridiculus volutpat Praesent
+commodo sem at Donec ac enim.</p>
+<p>Sed Nam cursus nibh ac aliquet Curabitur ligula ullamcorper tempor mauris. Sem justo auctor porta dolor tincidunt
+in congue ligula nibh dictumst. Neque Cras urna mattis malesuada tristique.</p>
+<p>Id Nam turpis justo velit eu ante congue justo consequat condimentum. Id.</p>
+</div>
+<?php $this->inlineScript()->captureStart() ?>
+dojo.addOnLoad(function () {
+    dojo.connect(dijit.byId("loadContentFor-simpleTitlePane-2"), "onClick", function () {
+        dojo.attr(dijit.byId("simpleTitlePane-2"), "content", dojo.byId("fromDomNode"));
+    });
+});
+<?php $this->inlineScript()->captureEnd() ?>
+<h5 class="highlightCodeHeading">Code in View:</h5>
+<div class="highlightCode">
+    <?php echo $this->code ?>
+</div>

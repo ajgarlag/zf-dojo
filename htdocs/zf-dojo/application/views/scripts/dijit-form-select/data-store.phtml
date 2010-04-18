@@ -1,0 +1,20 @@
+<h1>Zend Framework "View Helper" for dijit.form.Selct - Data Store Enabled</h1>
+<h2>Content was obtained from Data Store - dojo.data.ItemFileReadStore:</h2>
+<?php echo $this->select(
+    'select-1',
+    '',
+    array(
+        'maxHeight'    => '300',
+        'store'        => array(
+            'store'  => 'stateStore',
+            'type'   => 'dojo.data.ItemFileReadStore',
+            'params' => array('url' => $this->baseUrl('data/dojoStores/states.json')),
+        ),
+    ),
+    array(),
+    array()
+) ?>
+<h5 class="highlightCodeHeading">Code in View:</h5>
+<div class="highlightCode">
+    <?php echo $this->code ?>
+</div>

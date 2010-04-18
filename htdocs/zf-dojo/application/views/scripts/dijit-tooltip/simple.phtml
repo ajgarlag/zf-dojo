@@ -1,0 +1,92 @@
+<h1>Zend Framework "View Helper" for dijit.Tooltip - Simple Usage</h1>
+<h2>Content was defined in the view:</h2>
+<div id="bars">
+    <span id="bar1" class="bar1">
+        &nbsp;
+    </span>
+    <span id="bar2" class="bar2">
+        &nbsp;
+    </span>
+    <span id="bar3" class="bar3">
+        &nbsp;
+    </span>
+    <span id="bar4" class="bar1 bar4">
+        &nbsp;
+    </span>
+</div>
+<div>
+    Move your mouse over a colored bar
+</div>
+<?php echo $this->tooltip(
+    'tooltip-1',
+    'value <b>74</b>',
+    array(
+        'connectId' => 'bar1,bar4'
+    ),
+    array(
+    )
+) ?>
+<?php echo $this->tooltip(
+    'tooltip-2',
+    'value <b>45</b>',
+    array(
+        'connectId' => 'bar2',
+        'position'  => array('above')
+    ),
+    array(
+    )
+) ?>
+<?php echo $this->tooltip(
+    'tooltip-3',
+    'value <b>30</b>',
+    array(
+        'connectId' => 'bar3',
+        'showDelay' => 0,
+        'position'  => array('below')
+    ),
+    array(
+    )
+) ?>
+<?php $this->headStyle()->captureStart()  ?>
+#bars {
+    position: relative;
+    width: 132px;
+    height: 78px;
+    margin-top: 8px;
+}
+
+.bar1 {
+    position: absolute;
+    top: 0px;
+    left: 10px;
+    width: 17px;
+    height: 74px;
+    background-color: #ffa0a0;
+}
+
+.bar2 {
+    position: absolute;
+    top: 29px;
+    left: 40px;
+    width: 17px;
+    height: 45px;
+    background-color: #ffd4a0;
+}
+
+.bar3 {
+    position: absolute;
+    top: 44px;
+    left: 70px;
+    width: 17px;
+    height: 30px;
+    background-color: #fff79e;
+}
+
+.bar4 {
+    left: 100px;
+}
+<?php $this->headStyle()->captureEnd() ?>
+<h5 class="highlightCodeHeading">Code in View:</h5>
+<div class="highlightCode">
+    <?php echo $this->code ?>
+</div>

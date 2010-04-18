@@ -1,0 +1,148 @@
+/*
+ * Site's content
+ *
+ * @author:    IF MEDIA
+ * @email:     admin@ifmedia.eu
+ * @website:   http://www.finnisport.sk/
+ * @version:   $Id: site.css 3 2010-04-08 17:34:46Z merizamed $
+ */
+
+/* Basic tags
+ -----------------------------------------------------------------------------*/
+
+/* Hyperlinks (Basic)
+ -----------------------------------------------------------------------------*/
+a:link, a:visited {
+}
+
+a:hover, a:active {
+}
+
+/* Primary Content Hyperlinks */
+#primaryContent a, #footer a {
+}
+
+#primaryContent a:link, #primaryContent a:visited {
+}
+
+#primaryContent a:hover, #primaryContent a:active {
+}
+
+#primaryContent a:hover[href^="http:"], #primaryContent a:active[href^="http:"],
+#secondaryContent a:hover[href^="http:"], #secondaryContent a:active[href^="http:"] {
+/*    background: url(images/linkExternal.gif) no-repeat right top;
+    padding-right: 10px;*/
+}
+
+#primaryContent a:hover, #primaryContent a:active,
+#secondaryContent a:hover, #secondaryContent a:active,
+#primaryContent a:hover[href^="http://www.finnisport.sk"], #primaryContent a:active[href^="http://www.finnisport.sk"],
+#primaryContent a:hover[href^="http://finnisport.sk"], #primaryContent a:active[href^="http://finnisport.sk"],
+#secondaryContent a:hover[href^="http://www.finnisport.sk"], #secondaryContent a:active[href^="http://www.finnisport.sk"],
+#secondaryContent a:hover[href^="http://finnisport.sk"], #secondaryContent a:active[href^="http://finnisport.sk"] {
+/*    background: url(images/linkInternal.gif) no-repeat right top;
+    padding-right: 10px;*/
+}
+
+.notExternal {
+    background-image: none !important;
+    padding-right: 0px !important;
+}
+
+/* Headings
+ -----------------------------------------------------------------------------*/
+h1 {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+h3 {
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    margin: 20px 0 7px 10px;
+}
+
+h4 {
+    font-size: 14px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+h5 {
+    font-size: 12px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+/* Styles for Images
+ -----------------------------------------------------------------------------*/
+
+/* Drop shadow effect for the images. Sadly this requires a div to be wrapped around the image markup, which is a shame */
+#primaryContent .img-wrapper {
+    float: left;
+    line-height: 0px;
+    background: url(images/imgShadow.gif) no-repeat bottom right;
+}
+
+#primaryContent .img-wrapper img {
+    position: relative;
+    left: -5px;
+    top: -5px;
+    float: none;
+    padding: 0px;
+    background: #fff;
+    border: 1px solid #C5BDBD;
+}
+
+/* Colors
+ -----------------------------------------------------------------------------*/
+.red {
+    color: red !important;
+}
+
+.green {
+    color: green;
+}
+
+.yellow {
+    color: yellow;
+}
+
+/* Text Styles
+ -----------------------------------------------------------------------------*/
+.center {
+    text-align: center;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+/* Images Styles
+ -----------------------------------------------------------------------------*/
+img {
+    border: none;
+}
+
+/* Site Content
+ -----------------------------------------------------------------------------*/
+ul {
+    list-style: disc outside none;
+    margin-left: 40px;
+}
+
+/* Boxes
+ ------------------------------------------------------------------------------- */
+
+/* Box 1 */

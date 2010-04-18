@@ -1,0 +1,36 @@
+<h1>Zend Framework "View Helper" for dijit.Dialog - Dojo Form in dijit.Dialog</h1>
+<h2>Dojo Form in <u>dijit.Dialog</u>:</h2>
+<?php echo $this->dialog(
+    'dialog-1',
+    $this->form,
+    array(
+        'title' => 'dijit.Dialog with Dojo Form',
+        'jsId'  => 'dialog1'
+    ),
+    array(
+    )
+) ?>
+<br />
+<p>
+    When pressing this button the dialog with Dojo Form will popup.
+</p>
+<?php echo $this->button(
+    'show-dialog-1',
+    'Show Dialog 1',
+    array(
+        'onClick' => 'showDialog1();'
+    ),
+    array(
+        'title' => 'After click Dialog 1 will be showed',
+        'style' => 'margin-top: 10px;'
+    )
+) ?>
+<?php $this->inlineScript()->captureStart() ?>
+function showDialog1() {
+    dialog1.show();
+}
+<?php $this->inlineScript()->captureEnd() ?>
+<h5 class="highlightCodeHeading">Code in View:</h5>
+<div class="highlightCode">
+    <?php echo $this->code ?>
+</div>

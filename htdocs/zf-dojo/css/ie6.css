@@ -1,0 +1,28 @@
+/*
+ * Internet Explorer 6 and lower modifications
+ *
+ * @author:    IF MEDIA
+ * @email:     admin@ifmedia.eu
+ * @website:   http://www.finnisport.sk/
+ * @version:   $Id: ie6.css 3 2010-04-08 17:34:46Z merizamed $
+ */
+
+/* Makes stuffs transparent for IE6 and lower */
+/*
+#header ul li {
+    behavior: url(assets/templates/ifmedia/lib/iepngfix.htc);
+}
+*/
+
+/* Classes for clearing floats
+ -----------------------------------------------------------------------------*/
+
+/* Only for IE6 and below \*/
+* html .clear {
+    height: 1%;
+}
+
+.clear {
+    display: block;
+}
+/* End of hack */
