@@ -26,6 +26,8 @@ if (!defined('PHPUnit_MAIN_METHOD')) {
     define('PHPUnit_MAIN_METHOD', 'Zend_Dojo_View_Helper_AllTests::main');
 }
 
+require_once 'Zend/Dojo/View/Helper/TooltipTest.php';
+
 /**
  * @category   Zend
  * @package    Zend_Dojo
@@ -45,6 +47,8 @@ class Zend_Dojo_View_Helper_AllTests
     public static function suite()
     {
         $suite = new PHPUnit_Framework_TestSuite('Zend Framework - Zend_Dojo_View_Helper');
+
+        $suite->addTestSuite('Zend_Dojo_View_Helper_TooltipTest');
 
         return $suite;
     }
