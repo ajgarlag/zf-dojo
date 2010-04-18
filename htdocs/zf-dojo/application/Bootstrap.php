@@ -14,9 +14,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         // Enable Dojo View Helper
         $view = $this->getResource('View');
 
-        //
-        $view->addHelperPath('Crystal/Dojo/View/Helper', 'Crystal_Dojo_View_Helper');
-        Zend_Dojo::enableView($this->view);
+        Zend_Dojo::enableView($view);
     }
 
     /**

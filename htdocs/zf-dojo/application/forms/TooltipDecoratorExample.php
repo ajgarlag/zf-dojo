@@ -30,12 +30,6 @@ class Default_Form_TooltipDecoratorExample extends Zend_Dojo_Form
      */
     public function init()
     {
-        // Namespace pro dekorátory
-        $this->addPrefixPath('Crystal_Dojo_Form_Decorator', 'Crystal/Dojo/Form/Decorator', 'decorator')
-             ->addPrefixPath('Crystal_Dojo_Form_Element', 'Crystal/Dojo/Form/Element', 'element')
-             ->addElementPrefixPath('Crystal_Dojo_Form_Decorator', 'Crystal/Dojo/Form/Decorator', 'decorator')
-             ->addDisplayGroupPrefixPath('Crystal_Dojo_Form_Decorator', 'Crystal/Dojo/Form/Decorator');
-
         $this
             ->setMethod(Zend_Form::METHOD_POST)
             ->setAttribs(
