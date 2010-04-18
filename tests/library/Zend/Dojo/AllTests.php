@@ -47,7 +47,7 @@ class Zend_Dojo_AllTests
     {
         $suite = new PHPUnit_Framework_TestSuite('Zend Framework - Zend_Dojo Extened proposals');
 
-        $suite->addTest(Zend_Dojo_View_AllTests::suite());
+        $suite->addTest(Zend_Dojo_View_AllTests::suite());//
 
         return $suite;
     }
