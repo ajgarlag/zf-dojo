@@ -29,6 +29,7 @@ if (!defined('PHPUnit_MAIN_METHOD')) {
 require_once 'Zend/Dojo/View/Helper/TooltipTest.php';
 require_once 'Zend/Dojo/View/Helper/TitlePaneTest.php';
 require_once 'Zend/Dojo/View/Helper/SelectTest.php';
+require_once 'Zend/Dojo/View/Helper/ColorPaletteTest.php';
 
 /**
  * @category   Zend
@@ -53,6 +54,7 @@ class Zend_Dojo_View_Helper_AllTests
         $suite->addTestSuite('Zend_Dojo_View_Helper_TooltipTest');
         $suite->addTestSuite('Zend_Dojo_View_Helper_TitlePaneTest');
         $suite->addTestSuite('Zend_Dojo_View_Helper_SelectTest');
+        $suite->addTestSuite('Zend_Dojo_View_Helper_ColorPaletteTest');
 
         return $suite;
     }
