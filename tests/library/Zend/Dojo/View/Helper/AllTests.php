@@ -31,6 +31,8 @@ require_once 'Zend/Dojo/View/Helper/TitlePaneTest.php';
 require_once 'Zend/Dojo/View/Helper/SelectTest.php';
 require_once 'Zend/Dojo/View/Helper/ColorPaletteTest.php';
 require_once 'Zend/Dojo/View/Helper/DialogTest.php';
+require_once 'Zend/Dojo/View/Helper/DropDownButtonTest.php';
+
 
 /**
  * @category   Zend
@@ -57,6 +59,7 @@ class Zend_Dojo_View_Helper_AllTests
         $suite->addTestSuite('Zend_Dojo_View_Helper_SelectTest');
         $suite->addTestSuite('Zend_Dojo_View_Helper_ColorPaletteTest');
         $suite->addTestSuite('Zend_Dojo_View_Helper_DialogTest');
+        $suite->addTestSuite('Zend_Dojo_View_Helper_DropDownButtonTest');
 
         return $suite;
     }
