@@ -1,0 +1,35 @@
+<h1>Zend Framework "View Helper" for dijit.ColorPalette - with Dojo Form</h1>
+<?php echo $this->colorPalette(
+    'colorPalette-1',
+    '',
+    array(
+        'jsId'     => 'colorPalette1',
+        'palette'  => '7x10',
+        'onChange' => 'changeTextBoxValue(this)'
+    ),
+    array(
+    )
+) ?>
+<?php echo $this->form ?>
+<h5 class="highlightCodeHeading">Code in View:</h5>
+<div class="highlightCode">
+    <?php echo $this->code ?>
+</div>
+<h5 class="highlightCodeHeading">Code for the Dojo Form:</h5>
+<div class="highlightCode">
+    <?php echo $this->formCode ?>
+</div>
+<?php $this->inlineScript()->captureStart() ?>
+function changeTextBoxValue(colorPalette) {
+    dijit.byId("colorTextbox").attr("value", colorPalette.attr("value"));
+}
+dojo.addOnLoad(function () {
+    var myForm = dijit.byId("colorPaletteExample");
+    dojo.connect(myForm, "onSubmit", function(e) {
+        e.preventDefault();
+        if (myForm.isValid()) {
+            alert("Ready to submit data: " + dojo.toJson(myForm.attr("value")));
+        }
+    });
+});
+<?php $this->inlineScript()->captureEnd() ?>

@@ -1,0 +1,35 @@
+<?php echo $this->doctype() ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <base href="<?php echo $this->baseHref ?>"></base>
+        <?php echo $this->headMeta()->appendHttpEquiv('Content-Type', 'text/html; charset=UTF-8') ?>
+        <?php echo $this->headTitle() ?>
+        <?php echo $this->headLink()->appendStylesheet($this->baseUrl() . '/css/reset.css', 'screen')
+                                    ->appendStylesheet($this->baseUrl() . '/css/layout.css', 'screen')
+                                    ->appendStylesheet($this->baseUrl() . '/css/application.css', 'screen')
+                                    ->appendStylesheet($this->baseUrl() . '/css/menu.css', 'screen')
+                                    ->appendStylesheet($this->baseUrl() . '/css/site.css', 'screen')
+                                    ->appendStylesheet($this->baseUrl() . '/css/form.css', 'screen')
+                                    ->appendStylesheet($this->baseUrl() . '/css/ie6.css', 'screen', 'lte IE 6') ?>
+        <?php echo $this->headStyle() ?>
+        <?php if ($this->dojo()->isEnabled()) {
+                  $this->dojo()->setDjConfigOption('parseOnLoad', true)
+                               ->setDjConfigOption('locale', 'en')
+                               ->setDjConfigOption('isDebug', true)
+                               ->setDjConfigOption('debugAtAllCosts', false)
+                               ->setLocalPath($this->baseUrl() . '/js/dojo/dojo/dojo.js')
+                               ->registerModulePath('crystal', '../crystal')
+                               ->addStyleSheetModule('dijit.themes.tundra');
+
+                  echo $this->dojo();
+              }
+        ?>
+        <?php echo $this->headScript()->setAllowArbitraryAttributes(true) ?>
+    </head>
+    <body class="tundra">
+        <div id="wrapper">
+            <?php echo $this->layout()->content ?>
+        </div>
+        <?php echo $this->inlineScript() ?>
+    </body>
+</html>

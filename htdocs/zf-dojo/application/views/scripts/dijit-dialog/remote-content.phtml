@@ -1,0 +1,37 @@
+<h1>Zend Framework "View Helper" for dijit.Dialog - Remote Content</h1>
+<h2>Content will be loaded from server:</h2>
+<br />
+<p>
+    When pressing this button the dialog will popup.
+</p>
+<?php echo $this->dialog(
+    'dialog-1',
+    '',
+    array(
+        'title' => 'dijit.Dialog example 1 - Content received from server',
+        'href'  => $this->url(array('controller' => 'dijit-dialog', 'action' => 'remote-content-data'), null, true),
+        'jsId'  => 'dialog1'
+    ),
+    array(
+    )
+) ?>
+<?php echo $this->button(
+    'show-dialog-1',
+    'Show Dialog 1',
+    array(
+        'onClick' => 'showDialog1();'
+    ),
+    array(
+        'title' => 'After click Dialog 1 will be showed',
+        'style' => 'margin-top: 10px;'
+    )
+) ?>
+<?php $this->inlineScript()->captureStart() ?>
+function showDialog1() {
+    dialog1.show();
+}
+<?php $this->inlineScript()->captureEnd() ?>
+<h5 class="highlightCodeHeading">Code in View:</h5>
+<div class="highlightCode">
+    <?php echo $this->code ?>
+</div>

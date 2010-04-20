@@ -1,0 +1,43 @@
+/*
+ * Application - CSS pre prvky, ktoré sa týkajú samotnej aplikácie
+ *
+ * @author:    Crystal Studio
+ * @email:     admin@ifmedia.eu
+ * @website:   http://www.irisparfum.sk/
+ * @version:   $Id: application.css 3 2010-04-08 17:34:46Z merizamed $
+ */
+
+/* Styles for Images
+ -----------------------------------------------------------------------------*/
+.formDescription {
+    font-weight: bold;
+    padding-bottom: 2px;
+}
+
+/* Styles Main Columns
+ -----------------------------------------------------------------------------*/
+#programmatic {
+
+}
+
+#declarative {
+    margin-top: 20px;
+}
+
+#programmatic-declarative-separator {
+    margin-top: 20px;
+}
+
+/* Styles code highlighter
+ -----------------------------------------------------------------------------*/
+.highlightCode {
+    width: 838px;
+    margin: 3px 26px 26px;
+    padding: 14px;
+    background-color: #FFFFFF;
+    border: 1px #CCCCCC solid;
+}
+
+.highlightCodeHeading {
+    margin: 16px 0 0 30px;
+}

@@ -1,0 +1,46 @@
+<h1>Zend Framework "View Helper" for dijit.ProgressBar</h1>
+<h2>ProgressBar Demo:</h2>
+<?php echo $this->progressBar(
+    'progressBar-1',
+    '',
+    array(
+        'jsId' => 'progressBar1'
+    ),
+    array(
+        'style' => 'width: 300px;'
+    )
+) ?>
+<br />
+<p>
+    When pressing this button the <strong>ProgressBar</strong> will start.
+</p>
+<?php echo $this->button(
+    'start-progressBar-1',
+    'Start ProgressBar 1',
+    array(
+        'onClick' => 'startProgressBar1();'
+    ),
+    array(
+        'title' => 'After click ProgressBar 1 will be started',
+        'style' => 'margin-top: 10px;'
+    )
+) ?>
+<?php $this->inlineScript()->captureStart() ?>
+function startProgressBar1() {
+        // Split up bar into 7% segments
+        numParts = Math.floor(100 / 7);
+        progressBar1.update({
+            maximum: numParts,
+            progress: 0
+        });
+        for (var i = 0; i <= numParts; i++) {
+            // This plays update({progress:0}) at 1nn milliseconds,
+            // update({progress:1}) at 2nn milliseconds, etc.
+            setTimeout("progressBar1.update({ progress: " + i + " })", (i + 1) * 100 + Math.floor(Math.random() * 100));
+        }
+}
+<?php $this->inlineScript()->captureEnd() ?>
+<h5 class="highlightCodeHeading">Code in View:</h5>
+<div class="highlightCode">
+    <?php echo $this->code ?>
+</div>

@@ -1,0 +1,36 @@
+<h1>Zend Framework "View Helper" for dijit.TitlePane - Remote Content</h1>
+<?php echo $this->titlePane(
+    'simpleTitlePane-1',
+    '',
+    array(
+        'title' => 'Simple TitlePane - Content is loaded from URL, from remote server'
+    ),
+    array(
+        'style' => 'margin-bottom: 20px;'
+    )
+) ?>
+<?php echo $this->button(
+    'loadContentFor-simpleTitlePane-1',
+    'Load Remote Content to TitlePane',
+    array(
+    ),
+    array(
+        'title' => 'Load Content from URL ' . $this->url(array('controller' => 'dijit-title-pane',
+                   'action' => 'remote-content-data')) . ' into the TitlePane',
+        'style' => 'margin-bottom: 20px;'
+    )
+) ?>
+<?php $this->inlineScript()->captureStart() ?>
+dojo.addOnLoad(function () {
+    dojo.connect(dijit.byId("loadContentFor-simpleTitlePane-1"), "onClick", function () {
+        dojo.attr(dijit.byId("simpleTitlePane-1"), "href", "<?php echo $this->url(
+        array(
+            'controller' => 'dijit-title-pane', 'action' => 'remote-content-data'), null, true
+        ) ?>");
+    });
+});
+<?php $this->inlineScript()->captureEnd() ?>
+<h5 class="highlightCodeHeading">Code in View:</h5>
+<div class="highlightCode">
+    <?php echo $this->code ?>
+</div>

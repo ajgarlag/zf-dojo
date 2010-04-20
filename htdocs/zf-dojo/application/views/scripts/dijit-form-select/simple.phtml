@@ -1,0 +1,30 @@
+<h1>Zend Framework "View Helper" for dijit.form.Selct - Simple Usage</h1>
+<h2>Content was defined in the view:</h2>
+<?php echo $this->select(
+    'select-1',
+    'test',
+    array(
+    ),
+    array(
+    ),
+    array(
+        'first'  => 'First Value',
+        'second' => 'Second Value',
+        'third'  => 'Third Value',
+        'fourth' => 'Fourth Value'
+    )
+) ?>
+<h2>Content was passed from the Controller:</h2>
+<?php echo $this->select(
+    'select-2',
+    'test',
+    array(
+    ),
+    array(
+    ),
+    $this->selectContent
+) ?>
+<h5 class="highlightCodeHeading">Code in View:</h5>
+<div class="highlightCode">
+    <?php echo $this->code ?>
+</div>

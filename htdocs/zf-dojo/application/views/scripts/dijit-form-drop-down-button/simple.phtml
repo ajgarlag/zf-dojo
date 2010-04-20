@@ -1,0 +1,60 @@
+<h1>Zend Framework "View Helper" for dijit.form.DropDownButton and dijit.TooltipDialog</h1>
+<h2>dijit.form.DropDownButton with dijit.TooltipDialog Demo - Content in TooltipDialog defined in View:</h2>
+<p>
+    When pressing this button the <strong>TooltipDialog 1</strong> will popup.
+</p>
+<?php echo $this->tooltipDialog(
+    'tooltipDialog-1',
+    '<p>Lorem ipsum dolor sit amet consectetuer natoque euismod laoreet sit Aliquam. Pretium Vestibulum Praesent '
+  . 'orci ipsum tempor eros iaculis Nulla nulla nibh. Lacus sollicitudin malesuada sem Vivamus sociis Donec malesuada '
+  . 'quis ipsum eget. Sem Pellentesque eget Sed in Ut elit interdum porttitor commodo laoreet. Curabitur sociis '
+  . 'suscipit elit Donec In nec rhoncus nunc ipsum felis. Faucibus Suspendisse at Nulla in Donec ante justo.</p>',
+    array(
+        'jsId' => 'tooltipDialog1'
+    ),
+    array(
+        'title' => 'Content in TooltipDialog defined in View',
+        'style' => 'width: 400px;'
+    )
+) ?>
+<?php echo $this->dropDownButton(
+    'dropDownButton-1',
+    'Show TooltipDialog 1',
+    array(
+        'label'    => 'Show TooltipDialog 1',
+        'dropDown' => 'tooltipDialog1'
+    ),
+    array(
+    )
+) ?>
+<br />
+<br />
+<h2>dijit.form.DropDownButton with dijit.TooltipDialog Demo - Dojo Form in the TooltipDialog widget:</h2>
+<p>
+    When pressing this button the <strong>TooltipDialog 2</strong> will popup.
+</p>
+<?php echo $this->tooltipDialog(
+    'tooltipDialog-2',
+    $this->form,
+    array(
+        'jsId' => 'tooltipDialog2'
+    ),
+    array(
+        'title' => 'Dojo Form in the TooltipDialog widget',
+        'style' => 'width: 400px;'
+    )
+) ?>
+<?php echo $this->dropDownButton(
+    'dropDownButton-2',
+    'Show TooltipDialog 2',
+    array(
+        'label'    => 'Show TooltipDialog 2',
+        'dropDown' => 'tooltipDialog2'
+    ),
+    array(
+    )
+) ?>
+<h5 class="highlightCodeHeading">Code in View:</h5>
+<div class="highlightCode">
+    <?php echo $this->code ?>
+</div>
