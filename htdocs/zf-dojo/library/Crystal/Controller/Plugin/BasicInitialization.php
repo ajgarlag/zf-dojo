@@ -51,20 +51,6 @@ class Crystal_Controller_Plugin_BasicInitialization extends Zend_Controller_Plug
               . '/' . $this->getRequest()->getActionName() . '.phtml', true
             );
         }
-
-        switch (APPLICATION_ENV) {
-            case 'production':
-                $view->baseHref = 'http://zf-dojo.crystal-studio.eu/';
-            break;
-
-            case 'development':
-                $view->baseHref = 'http://localhost/zf-dojo/';
-            break;
-
-            default:
-                $view->baseHref = 'http://zf-dojo.crystal-studio.eu/';
-            break;
-        }
     }
 
     /**

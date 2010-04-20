@@ -15,6 +15,8 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $view = $this->getResource('View');
 
         Zend_Dojo::enableView($view);
+
+        $view->baseHref = $this->getOption('viewbasehref');
     }
 
     /**
