@@ -27,6 +27,7 @@ if (!defined('PHPUnit_MAIN_METHOD')) {
 }
 
 require_once 'Zend/Dojo/Form/Element/SelectTest.php';
+require_once 'Zend/Dojo/Form/Element/DropDownButtonTest.php';
 
 /**
  * @category   Zend
@@ -49,6 +50,7 @@ class Zend_Dojo_Form_Element_AllTests
         $suite = new PHPUnit_Framework_TestSuite('Zend Framework - Zend_Dojo_Form_Element');
 
         $suite->addTestSuite('Zend_Dojo_Form_Element_SelectTest');
+        $suite->addTestSuite('Zend_Dojo_Form_Element_DropDownButtonTest');
 
         return $suite;
     }
