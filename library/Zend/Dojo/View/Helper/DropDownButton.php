@@ -21,7 +21,7 @@
  */
 
 /** Zend_Dojo_View_Helper_DijitContainer */
-require_once 'Zend/Dojo/View/Helper/DijitContainer.php';
+require_once 'Zend/Dojo/View/Helper/Button.php';
 
 /**
  * Dojo DropDownButton dijit
@@ -32,7 +32,7 @@ require_once 'Zend/Dojo/View/Helper/DijitContainer.php';
  * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Dojo_View_Helper_DropDownButton extends Zend_Dojo_View_Helper_DijitContainer
+class Zend_Dojo_View_Helper_DropDownButton extends Zend_Dojo_View_Helper_Button
 {
     /**
      * Dijit being used
@@ -55,12 +55,8 @@ class Zend_Dojo_View_Helper_DropDownButton extends Zend_Dojo_View_Helper_DijitCo
      * @param  array $attribs HTML attributes
      * @return string
      */
-    public function dropDownButton($id = null, $content = '', array $params = array(), array $attribs = array())
+    public function dropDownButton($id, $value = null, array $params = array(), array $attribs = array())
     {
-        if (0 === func_num_args()) {
-            return $this;
-        }
-
-        return $this->_createLayoutContainer($id, $content, $params, $attribs);
+        return $this->button($id, $value, $params, $attribs);
     }
 }

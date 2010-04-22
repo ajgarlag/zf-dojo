@@ -97,23 +97,32 @@ class Zend_Dojo_View_Helper_DropDownButtonTest extends PHPUnit_Framework_TestCas
         return $view;
     }
 
-    public function getContainer()
+    public function getElement()
     {
-        return $this->view->DropDownButton('pane1', 'This is the DropDownButton content', array('title' => 'DropDownButton 1'));
+        return $this->helper->dropDownButton(
+            'elementId',
+            'foo',
+            array(),
+            array(),
+            array(
+                'checked'   => 'foo',
+                'unChecked' => 'bar',
+            )
+        );
     }
 
     public function testShouldAllowDeclarativeDijitCreation()
     {
-        $html = $this->getContainer();
-        $this->assertRegexp('/<div[^>]*(dojoType="dijit.form.DropDownButton")/', $html, $html);
+        $html = $this->getElement();
+        $this->assertRegexp('/<button[^>]*(dojoType="dijit.form.DropDownButton")/', $html, $html);
     }
 
     public function testShouldAllowProgrammaticDijitCreation()
     {
         Zend_Dojo_View_Helper_Dojo::setUseProgrammatic();
-        $html = $this->getContainer();
-        $this->assertNotRegexp('/<div[^>]*(dojoType="dijit.form.DropDownButton")/', $html);
-        $this->assertNotNull($this->view->dojo()->getDijit('pane1'));
+        $html = $this->getElement();
+        $this->assertNotRegexp('/<button[^>]*(dojoType="dijit.form.DropDownButton")/', $html);
+        $this->assertNotNull($this->view->dojo()->getDijit('elementId'));
     }
 }
 
