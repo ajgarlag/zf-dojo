@@ -23,5 +23,4 @@ $path = array(
 );
 
 set_include_path(implode(PATH_SEPARATOR, $path));
-var_dump($zfRoot);
 unset($zfRoot);
