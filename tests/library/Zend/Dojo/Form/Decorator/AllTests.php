@@ -28,6 +28,7 @@ if (!defined('PHPUnit_MAIN_METHOD')) {
 
 require_once 'Zend/Dojo/Form/Decorator/DialogTest.php';
 require_once 'Zend/Dojo/Form/Decorator/TitlePaneTest.php';
+require_once 'Zend/Dojo/Form/Decorator/TooltipTest.php';
 
 /**
  * @category   Zend
@@ -51,6 +52,7 @@ class Zend_Dojo_Form_Decorator_AllTests
 
         $suite->addTestSuite('Zend_Dojo_Form_Decorator_DialogTest');
         $suite->addTestSuite('Zend_Dojo_Form_Decorator_TitlePaneTest');
+        $suite->addTestSuite('Zend_Dojo_Form_Decorator_TooltipTest');
 
         return $suite;
     }
